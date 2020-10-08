@@ -1,8 +1,15 @@
 import axios from "axios"
 import {
+  MAILCONNECTOR_USERNAME,
+  MAILCONNECTOR_PASSWORD,
   DSSLACKCONNECTOR1_USERNAME,
   DSSLACKCONNECTOR1_PASSWORD
 } from "react-native-dotenv"
+const mailConnector = axios.create({
+  baseURL: "https://www.googleapis.com/gmail/v1",
+  auth: { username: MAILCONNECTOR_USERNAME, password: MAILCONNECTOR_PASSWORD },
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 const dSSlackConnector = axios.create({
   baseURL: "https://api.spotify.com",
   auth: {
