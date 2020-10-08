@@ -5,6 +5,10 @@ import {
   DSSLACKCONNECTOR1_USERNAME,
   DSSLACKCONNECTOR1_PASSWORD
 } from "react-native-dotenv"
+const aUTHTEST = axios.create({
+  baseURL: "https://a.com",
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 const mailConnector = axios.create({
   baseURL: "https://www.googleapis.com/gmail/v1",
   auth: { username: MAILCONNECTOR_USERNAME, password: MAILCONNECTOR_PASSWORD },
